@@ -1,97 +1,223 @@
-/* Base styling for all boxes */
-.box, .box1, .box2 {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  border: 2px solid black;
-  margin: 10px;
+/* CSS - Name: "positionstyles.css" */
+/* Activity 1 styles */
+.content1 {
+  /* This is the parent of the activity 1 boxes. */
+}
+.red1 { 
+width: 100px; 
+height: 100px; 
+background-color: red; 
+} 
+.green1 {
+width: 100px; 
+height: 100px; 
+background-color: green; 
+} 
+.yellow1 {
+width: 100px; 
+height: 100px; 
+background-color: gold; 
+} 
+.blue1 {
+width: 100px; 
+height: 100px; 
+background-color: blue; 
+} 
+/* Activity 2 styles */ 
+.content2 {
+  /* This is the parent of the activity 2 boxes. */
+}
+.red2 {
+width: 100px; 
+height: 100px; 
+background-color: red; 
+} 
+.green2 { 
+width: 100px; 
+height: 100px; 
+background-color: green; 
+} 
+.yellow2 {
+width: 100px; 
+height: 100px; 
+background-color: gold; 
+} 
+.blue2 {
+width: 100px; 
+height: 100px; 
+background-color: blue; 
+} 
+/* Activity 3 styles */ 
+.content3 {
+  /* This is the parent of the activity 3 boxes. */
+}
+.red3 {
+width: 100px; 
+height: 100px; 
+background-color: red; 
+} 
+.green3 {
+width: 100px; 
+height: 100px; 
+background-color: green;
+} 
+.yellow3 {
+width: 100px; 
+height: 100px; 
+background-color: gold; 
+} 
+.blue3 {
+width: 100px;
+height: 100px; 
+background-color: blue; 
+} 
+/* Activity 4 styles */ 
+.content4 {
+  /* This is the parent of the activity 4 boxes. */
+  height: 400px;
+}
+.red4 {
+width: 100px; 
+height: 100px; 
+background-color: red; 
+} 
+.green4 {
+width: 100px; 
+height: 100px; 
+background-color: green; 
+} 
+.yellow4 {
+width: 100px; 
+height: 100px; 
+background-color: gold; 
+} 
+.blue4 {
+width: 100px; 
+height: 100px; 
+background-color: blue; 
+} 
+/* Activity 5 styles */ 
+.content5 {
+  /* This is the parent of the activity 5 boxes. */
+   height: 400px;
+}
+.red5 { 
+width: 100px; 
+height: 100px; 
+background-color: red; 
+} 
+.green5 { 
+width: 100px; 
+height: 100px; 
+background-color: green; 
+
+} 
+.yellow5 {
+width: 100px; 
+height: 100px; 
+background-color: gold; 
+
+} 
+.blue5 {
+width: 100px; 
+height: 100px; 
+background-color: blue; 
+} 
+/* Activity 6 styles */ 
+.content6 {
+  /* This is the parent of the activity 6 boxes. */
+}
+.red6 {
+width: 100px; 
+height: 100px; 
+background-color: red; 
+} 
+.green6 {
+width: 100px; 
+height: 100px; 
+background-color: green; 
+} 
+.yellow6 {
+width: 100px; 
+height: 100px; 
+background-color: gold; 
+} 
+.blue6 {
+width: 100px; 
+height: 100px; 
+background-color: blue; 
+} 
+
+
+/* Do not make any changes below here */
+.activity {
+width: 70%; 
+margin: 20px auto; 
+font-family: Arial, sans-serif; 
+border: 1px solid black; 
+padding: 10px; 
+clear:both; 
+overflow: auto;
+} 
+
+.hint {
+border: 1px solid grey;
+background: #e0e0e0;
+padding: .5em;
+position: relative;
+margin: 1em 0;
+}
+.hint h3 {
+margin: 0;
+}
+.hint:hover {
+background: #d0d0d0;
+}
+.hint > div {
+display: none;
 }
 
-/* STEP 1: Center red box using ::before */
-.step1 {
-  position: relative;
-  height: 120px;
-  border: 2px solid gray;
-  margin: 20px;
-}
-.step1::before {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  margin: 0 auto; /* centers horizontally */
+.hint input[type=checkbox] {
+position: absolute;
+width: 100%;
+height: 100%;
+opacity: 0;
+z-index: 1;
+cursor: pointer;
 }
 
-/* STEP 2: Stack blue boxes vertically */
-.step2 {
-  border: 2px solid gray;
-  margin: 20px;
-  padding: 10px;
+.hint input[type=checkbox]:checked ~ div {
+display: block;
 }
 
-/* The boxes already stack vertically by default (block divs),
-   so no extra CSS needed here */
-
-/* STEP 3: Float boxes side-by-side */
-.step3 {
-  border: 2px solid gray;
-  margin: 20px;
-  padding: 10px;
-  overflow: hidden; /* clear floats */
+.hint i {
+position: absolute;
+transform: translate(-6px, 0);
+margin-top: 16px;
+right: 10px;
+top: -3px;
 }
-.step3 .box {
-  float: left;
+.hint i:before, .hint i:after {
+content: "";
+position: absolute;
+background-color: black;
+width: 3px;
+height: 9px;
 }
-
-/* STEP 4: Absolute inside relative */
-.step4 {
-  border: 2px solid gray;
-  margin: 20px;
-  position: relative;
-  height: 150px;
-  background-color: #eee;
+.hint i:before {
+transform: translate(2px, 0) rotate(45deg);
 }
-.step4 .box {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  background-color: green;
+.hint i:after {
+transform: translate(-2px, 0) rotate(-45deg);
 }
 
-/* STEP 5: Overlapping with z-index */
-.step5 {
-  border: 2px solid gray;
-  margin: 20px;
-  position: relative;
-  height: 150px;
-  background-color: #f8f8f8;
+.hint input[type=checkbox]:checked ~ i:before {
+transform: translate(-2px, 0) rotate(45deg);
 }
-.step5 .box1 {
-  background-color: purple;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  z-index: 1;
+.hint input[type=checkbox]:checked ~ i:after {
+transform: translate(2px, 0) rotate(-45deg);
 }
-.step5 .box2 {
-  background-color: orange;
-  position: absolute;
-  top: 60px;
-  left: 60px;
-  z-index: 2; /* on top */
-}
-
-/* STEP 6: CSS Grid 2x2 layout */
-.step6 {
-  border: 2px solid gray;
-  margin: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 120px);
-  grid-template-rows: repeat(2, 120px);
-  gap: 10px;
-  justify-content: start;
-}
-.step6 .box {
-  background-color: purple;
+.hint a {
+position: relative;
+z-index: 1;
 }
