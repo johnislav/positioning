@@ -1,179 +1,119 @@
-/* ========== EXERCISE 1 ========== */
-
-.content1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  gap: 20px;
+/* STEP 1: Center with Margin */
+.step1 {
+  width: 500px;
+  height: 150px;
+  border: 2px dashed #888;
+  margin: 20px auto;
 }
 
-.red1 {
-  width: 100%;
-  height: 100px;
-  background-color: red;
-  grid-column: 1 / 3;
-}
-
-.green1 {
-  width: 200px;
-  height: 200px;
-  background-color: green;
-}
-
-.yellow1 {
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
-}
-
-.blue1 {
-  width: 100%;
-  height: 100px;
-  background-color: blue;
-  grid-column: 1 / 3;
-}
-
-
-/* ========== EXERCISE 2 ========== */
-
-.red2, .green2, .blue2 {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-}
-
-.red2 {
-  background-color: red;
-  float: left;
-}
-
-.green2 {
-  background-color: green;
-  float: left;
-}
-
-.blue2 {
-  background-color: blue;
-  float: right;
-}
-
-.content2::after {
+.step1::before {
   content: "";
   display: block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 0 auto;
+}
+
+/* STEP 2: Stack boxes with default (static) flow */
+.step2 {
+  width: 500px;
+  height: 200px;
+  border: 2px dashed #888;
+  margin: 20px auto;
+}
+
+.step2 .box {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  margin: 10px auto;
+}
+
+/* STEP 3: Float boxes side-by-side */
+.step3 {
+  width: 500px;
+  height: 150px;
+  border: 2px dashed #888;
+  margin: 20px auto;
+}
+
+.step3 .box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  float: left;
+  margin-right: 10px;
+}
+
+/* Clear float (not strictly needed here unless there's content after) */
+.step3::after {
+  content: "";
+  display: table;
   clear: both;
 }
 
-
-/* ========== EXERCISE 3 ========== */
-
-.content3 {
+/* STEP 4: Absolute box inside relative container */
+.step4 {
+  width: 500px;
+  height: 200px;
+  border: 2px dashed #888;
+  margin: 20px auto;
   position: relative;
-  height: 300px;
 }
 
-.red3, .green3, .blue3 {
+.step4 .box {
   width: 100px;
   height: 100px;
-  position: absolute;
-}
-
-.red3 {
-  background-color: red;
-  top: 0;
-  left: 0;
-}
-
-.green3 {
   background-color: green;
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: 50px;
+  left: 200px;
 }
 
-.blue3 {
+/* STEP 5: Z-Index Overlap */
+.step5 {
+  width: 500px;
+  height: 200px;
+  border: 2px dashed #888;
+  margin: 20px auto;
+  position: relative;
+}
+
+.step5 .box1 {
+  width: 150px;
+  height: 150px;
   background-color: blue;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  z-index: 1;
 }
 
+.step5 .box2 {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  z-index: 2;
+}
 
-/* ========== EXERCISE 4 ========== */
-
-.content4 {
+/* STEP 6: CSS Grid 2x2 */
+.step6 {
+  width: 500px;
+  height: 300px;
+  border: 2px dashed #888;
+  margin: 20px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
 }
 
-.red4 {
-  background-color: red;
-  grid-column: 1 / 3;
-}
-
-.green4 {
-  background-color: green;
-}
-
-.blue4 {
-  background-color: blue;
-  grid-column: 2 / 4;
-}
-
-.red4, .green4, .blue4 {
+.step6 .box {
+  background-color: purple;
   width: 100%;
   height: 100%;
-}
-
-
-/* ========== EXERCISE 5 ========== */
-
-.red5, .green5, .blue5 {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-}
-
-.red5 {
-  background-color: red;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.green5 {
-  background-color: green;
-  margin-left: 50px;
-}
-
-.blue5 {
-  background-color: blue;
-  margin-left: 100px;
-}
-
-
-/* ========== EXERCISE 6 ========== */
-
-.content6 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  height: 200px;
-}
-
-.red6, .green6, .blue6 {
-  width: 100px;
-  height: 100px;
-}
-
-.red6 {
-  background-color: red;
-}
-
-.green6 {
-  background-color: green;
-}
-
-.blue6 {
-  background-color: blue;
 }
