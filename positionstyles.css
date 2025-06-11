@@ -134,72 +134,74 @@
 }
 
 
-/* === Activity 5: Float Layout Based on Hint 5 === */
-.content5 {
-  overflow: hidden;
-  font-family: sans-serif;
-}
-
-.red5 {
-  background-color: red;
-  height: 100px;
-  width: 100%;
-}
-
-.green5 {
-  background-color: green;
-  float: left;
-  width: 200px;
-  height: 200px;
-  margin-right: 15px; /* spacing between green and yellow text */
-}
-
-.yellow5 {
-  background-color: gold;
-  height: 200px;
-  overflow: hidden;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.blue5 {
-  background-color: blue;
-  height: 100px;
-  width: 100%;
-  clear: both; /* ensures blue goes below green+yellow */
-}
-/* === Activity 6: CSS Grid Layout with z-index === */
+/* === Activity 5: CSS Grid Layout with yellow overlapping green and blue === */
 .content6 {
   display: grid;
-  grid-template-columns: repeat(6, 100px); /* 6 columns of 100px */
-  grid-template-rows: repeat(6, 100px);    /* 6 rows of 100px */
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(6, 100px);
   position: relative;
 }
 
 .red6 {
   background-color: red;
-  grid-column: 1 / 4; /* spans 3 columns */
+  grid-column: 1 / 4;
   grid-row: 1 / 2;
   z-index: 3;
 }
 
 .green6 {
   background-color: green;
-  grid-column: 1 / 3; /* spans 2 columns */
-  grid-row: 5 / 7;    /* bottom rows */
+  grid-column: 1 / 3;
+  grid-row: 5 / 7;
   z-index: 2;
 }
 
 .blue6 {
   background-color: blue;
-  grid-column: 2 / 6; /* wide and centered */
+  grid-column: 2 / 6;
   grid-row: 2 / 6;
   z-index: 1;
 }
 
 .yellow6 {
   background-color: gold;
-  grid-column: 5 / 7;
-  grid-row: 3 / 7;
+  grid-column: 3 / 5;
+  grid-row: 4 / 7; /* now touches green and overlaps blue */
+  z-index: 4;
+}
+
+/* === Activity 6: Grid layout with yellow overlapping the right side of blue === */
+.content6 {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(6, 100px);
+  position: relative;
+}
+
+.red6 {
+  background-color: red;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  z-index: 3;
+}
+
+.green6 {
+  background-color: green;
+  grid-column: 1 / 3;
+  grid-row: 5 / 7;
+  z-index: 2;
+}
+
+.blue6 {
+  background-color: blue;
+  grid-column: 2 / 6;
+  grid-row: 2 / 6;
+  z-index: 1;
+}
+
+.yellow6 {
+  background-color: gold;
+  grid-column: 5 / 7; /* right side of blue */
+  grid-row: 3 / 6;    /* overlaps blue vertically */
   z-index: 4;
 }
