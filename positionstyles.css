@@ -133,8 +133,7 @@
   grid-column: 2 / 3;
 }
 
-
-/* === Activity 5: Float Layout Based on Hint 5 === */
+/* === Activity 5: Float layout with wrapped text === */
 .content5 {
   overflow: hidden;
   font-family: sans-serif;
@@ -151,23 +150,23 @@
   float: left;
   width: 200px;
   height: 200px;
-  margin-right: 15px; /* spacing between green and yellow text */
+  margin-right: 15px;
 }
 
 .yellow5 {
   background-color: gold;
   height: 200px;
-  overflow: hidden;
   padding: 10px;
   box-sizing: border-box;
 }
 
 .blue5 {
   background-color: blue;
+  clear: both;
   height: 100px;
   width: 100%;
-  clear: both; /* ensures blue goes below green+yellow */
 }
+
 
 /* === Activity 6: Grid layout with yellow overlapping the right side of blue === */
 .content6 {
