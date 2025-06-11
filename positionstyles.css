@@ -66,12 +66,13 @@
 }
 
 
-/* === Activity 3: Grid Layout, Boxes Touching === */
+/* === Activity 3: Grid Layout with Gap Between Green and Yellow === */
 .content3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
-  gap: 0; /* no spacing between elements */
+  column-gap: 20px; /* Gap between green and yellow */
+  row-gap: 0;        /* No vertical gaps */
 }
 
 .red3 {
@@ -80,17 +81,18 @@
   height: 100px;
 }
 
-.green3, .yellow3 {
-  height: 200px;
-  width: 100%;
-}
-
 .green3 {
   background-color: green;
+  height: 200px;
+  width: 100%;
+  grid-column: 1 / 2;
 }
 
 .yellow3 {
   background-color: gold;
+  height: 200px;
+  width: 100%;
+  grid-column: 2 / 3;
 }
 
 .blue3 {
