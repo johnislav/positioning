@@ -31,33 +31,43 @@
 
 /* === Exercise 2 === */
 .content2 {
-  overflow: hidden;
-}
-.red2 {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  float: left;
-}
-.green2 {
-  width: 100px;
-  height: 100px;
-  background-color: green;
-  float: left;
-}
-.yellow2 {
-  width: 100px;
-  height: 100px;
-  background-color: gold;
-  float: left;
-}
-.blue2 {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  clear: both;
+  position: relative;
+  height: 400px;
 }
 
+.red2, .green2, .yellow2, .blue2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.red2 {
+  background-color: red;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.green2 {
+  background-color: green;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+}
+
+.yellow2 {
+  background-color: gold;
+  top: 60px;
+  left: 60px;
+  z-index: 3;
+}
+
+.blue2 {
+  background-color: blue;
+  top: 90px;
+  left: 90px;
+  z-index: 4;
+}
 
 /* === Exercise 3 === */
 .content3 {
