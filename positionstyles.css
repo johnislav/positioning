@@ -11,14 +11,14 @@
   background-color: red;
   grid-column: 1 / 3;
 }
-.green1 {
+.green1, .yellow1 {
   width: 200px;
   height: 200px;
+}
+.green1 {
   background-color: green;
 }
 .yellow1 {
-  width: 200px;
-  height: 200px;
   background-color: gold;
 }
 .blue1 {
@@ -31,39 +31,46 @@
 
 /* === Exercise 2 === */
 .content2 {
-  overflow: hidden; /* to contain the floated elements */
-}
-.red2, .green2, .yellow2 {
-  width: 100px;
-  height: 100px;
+  overflow: hidden;
 }
 .red2 {
+  width: 100px;
+  height: 100px;
   background-color: red;
   float: left;
 }
 .green2 {
+  width: 100px;
+  height: 100px;
   background-color: green;
   float: left;
 }
 .yellow2 {
+  width: 100px;
+  height: 100px;
   background-color: gold;
   float: left;
 }
 .blue2 {
-  clear: both;
   width: 100px;
   height: 100px;
   background-color: blue;
+  clear: both;
 }
 
 
 /* === Exercise 3 === */
 .content3 {
   position: relative;
-  height: 300px; /* give room for absolute children */
+  height: 300px;
 }
-.red3, .green3, .yellow3, .blue3 {
-  width: 100px;
+.red3, .blue3 {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+}
+.green3, .yellow3 {
+  width: 50%;
   height: 100px;
   position: absolute;
 }
@@ -74,33 +81,34 @@
 }
 .green3 {
   background-color: green;
-  top: 0;
-  left: 110px;
+  top: 100px;
+  left: 0;
 }
 .yellow3 {
   background-color: gold;
-  top: 110px;
-  left: 0;
+  top: 100px;
+  left: 50%;
 }
 .blue3 {
   background-color: blue;
-  top: 110px;
-  left: 110px;
+  top: 200px;
+  left: 0;
 }
 
 
 /* === Exercise 4 === */
 .content4 {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.red4, .green4, .yellow4, .blue4 {
-  width: 100px;
-  height: 100px;
+  height: 300px;
 }
 .red4 {
   background-color: red;
+  width: 50%;
+  height: 100%;
+}
+.green4, .yellow4, .blue4 {
+  width: 100%;
+  height: 33.33%;
 }
 .green4 {
   background-color: green;
@@ -111,80 +119,80 @@
 .blue4 {
   background-color: blue;
 }
+/* Stack right column using flexbox simulation */
+.content4 > :not(.red4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  flex: 1;
+}
 
 
 /* === Exercise 5 === */
 .content5 {
-  height: 300px;
-  position: relative;
+  overflow: hidden;
 }
 .red5 {
-  width: 100px;
+  width: 100%;
   height: 100px;
   background-color: red;
-  position: relative;
-  z-index: 1;
 }
 .green5 {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  float: left;
   background-color: green;
-  position: relative;
-  top: -50px;
-  left: 50px;
-  z-index: 2;
 }
 .yellow5 {
-  width: 100px;
-  height: 100px;
+  height: 200px;
+  margin-left: 210px;
   background-color: gold;
-  position: relative;
-  top: -100px;
-  left: 100px;
-  z-index: 3;
 }
 .blue5 {
-  width: 100px;
+  width: 100%;
   height: 100px;
+  clear: both;
   background-color: blue;
-  position: relative;
-  top: -150px;
-  left: 150px;
-  z-index: 4;
 }
 
 
 /* === Exercise 6 === */
 .content6 {
   position: relative;
-  height: 300px;
+  height: 600px;
 }
 .red6, .green6, .yellow6, .blue6 {
-  width: 100px;
-  height: 100px;
   position: absolute;
 }
 .red6 {
   background-color: red;
+  width: 300px;
+  height: 150px;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
 }
 .green6 {
   background-color: green;
-  top: 30px;
-  left: 30px;
+  width: 200px;
+  height: 200px;
+  bottom: 0;
+  left: 0;
   z-index: 2;
 }
 .yellow6 {
   background-color: gold;
-  top: 60px;
-  left: 60px;
-  z-index: 3;
+  width: 200px;
+  height: 300px;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
 }
 .blue6 {
   background-color: blue;
-  top: 90px;
-  left: 90px;
-  z-index: 4;
+  width: 400px;
+  height: 400px;
+  top: 100px;
+  left: 100px;
+  z-index: 1;
 }
