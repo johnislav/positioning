@@ -134,40 +134,39 @@
 }
 
 
-/* === Activity 5: CSS Grid Layout with yellow overlapping green and blue === */
-.content6 {
-  display: grid;
-  grid-template-columns: repeat(6, 100px);
-  grid-template-rows: repeat(6, 100px);
-  position: relative;
+/* === Activity 5: Float Layout Based on Hint 5 === */
+.content5 {
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
-.red6 {
+.red5 {
   background-color: red;
-  grid-column: 1 / 4;
-  grid-row: 1 / 2;
-  z-index: 3;
+  height: 100px;
+  width: 100%;
 }
 
-.green6 {
+.green5 {
   background-color: green;
-  grid-column: 1 / 3;
-  grid-row: 5 / 7;
-  z-index: 2;
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-right: 15px; /* spacing between green and yellow text */
 }
 
-.blue6 {
-  background-color: blue;
-  grid-column: 2 / 6;
-  grid-row: 2 / 6;
-  z-index: 1;
-}
-
-.yellow6 {
+.yellow5 {
   background-color: gold;
-  grid-column: 3 / 5;
-  grid-row: 4 / 7; /* now touches green and overlaps blue */
-  z-index: 4;
+  height: 200px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.blue5 {
+  background-color: blue;
+  height: 100px;
+  width: 100%;
+  clear: both; /* ensures blue goes below green+yellow */
 }
 
 /* === Activity 6: Grid layout with yellow overlapping the right side of blue === */
