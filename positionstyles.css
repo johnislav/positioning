@@ -137,7 +137,6 @@
 
 /* === Activity 5: Float Layout Based on Hint 5 === */
 .content5 {
-  overflow: hidden;
   font-family: sans-serif;
 }
 
@@ -150,24 +149,20 @@
 .green5 {
   background-color: green;
   float: left;
-  width: 200px;
-  height: 200px;
-  margin-right: 15px; /* spacing between green and yellow text */
+  width: 100px;
+  height: 100px;
 }
 
 .yellow5 {
   background-color: gold;
-  height: 200px;
-  overflow: hidden;
-  padding: 10px;
-  box-sizing: border-box;
+  width: 100%;
+  height: 180px;
 }
 
 .blue5 {
   background-color: blue;
   height: 100px;
   width: 100%;
-  clear: both; /* ensures blue goes below green+yellow */
 }
 
 /* === Activity 6: Grid layout with yellow overlapping the right side of blue === */
